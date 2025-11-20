@@ -1,0 +1,340 @@
+/* 导入主题系统 */
+@import './themes.css';
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: var(--font-base);
+  color: var(--text-primary);
+  background: var(--gradient-bg);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 应用容器 */
+.app {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-card);
+  border-radius: var(--radius-small);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: var(--radius-small);
+  opacity: 0.6;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
+}
+
+/* Firefox滚动条 */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--bg-card);
+}
+
+/* 选择文本样式 */
+::selection {
+  background: var(--primary-color);
+  color: var(--bg-primary);
+}
+
+::-moz-selection {
+  background: var(--primary-color);
+  color: var(--bg-primary);
+}
+
+/* 焦点样式 */
+:focus {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+}
+
+h1 { font-size: var(--font-4xl); }
+h2 { font-size: var(--font-3xl); }
+h3 { font-size: var(--font-2xl); }
+h4 { font-size: var(--font-xl); }
+h5 { font-size: var(--font-lg); }
+h6 { font-size: var(--font-base); }
+
+p {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
+}
+
+/* 强调文本 */
+strong, b {
+  font-weight: 600;
+  color: var(--text-accent);
+}
+
+em, i {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-normal) ease;
+}
+
+a:hover {
+  color: var(--text-accent);
+}
+
+/* Buttons */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  transition: all var(--transition-normal) ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Form Elements */
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 1;
+}
+
+/* 分割线 */
+hr {
+  border: none;
+  height: 1px;
+  background: var(--border-secondary);
+  margin: var(--spacing-xl) 0;
+}
+
+/* 列表重置 */
+ul, ol {
+  list-style: none;
+}
+
+/* 图片响应式 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 表格样式 */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* 无障碍隐藏 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 跳转到主内容链接 */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--primary-color);
+  color: var(--bg-primary);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: var(--radius-small);
+  z-index: var(--z-tooltip);
+  transition: top var(--transition-normal) ease;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* 状态类 */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.error {
+  color: var(--error-color);
+}
+
+.success {
+  color: var(--success-color);
+}
+
+.warning {
+  color: var(--warning-color);
+}
+
+.info {
+  color: var(--info-color);
+}
+
+/* 工具类 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* 响应式工具类 */
+.hidden-mobile {
+  display: block;
+}
+
+.hidden-desktop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none;
+  }
+  
+  .hidden-desktop {
+    display: block;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+}
+
+/* 动画类 */
+.fade-in {
+  animation: fadeIn var(--transition-slow) ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp var(--transition-normal) ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 打印样式 */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+  :root {
+    --bg-card: #000000;
+    --border-primary: #ffffff;
+    --border-secondary: #ffffff;
+  }
+}
+
+/* 减少动画偏好支持 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .theme-transitioning * {
+    transition: none !important;
+  }
+}

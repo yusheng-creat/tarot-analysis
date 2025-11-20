@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>塔罗分析师</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔮 塔罗分析师</h1>
+            <p>探索内心，洞察未来</p>
+        </header>
+
+        <main>
+            <div class="spread-selection">
+                <h2>选择牌阵</h2>
+                <div class="spread-options">
+                    <button class="spread-btn" data-spread="single">单张牌</button>
+                    <button class="spread-btn" data-spread="three">三张牌阵</button>
+                    <button class="spread-btn" data-spread="celtic">凯尔特十字</button>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <h3>请输入你的问题</h3>
+                <textarea id="question" placeholder="在心中默念你想要询问的问题..."></textarea>
+            </div>
+
+            <div class="draw-section">
+                <button id="drawCards" class="draw-btn">抽牌</button>
+            </div>
+
+            <div id="result" class="result-section" style="display: none;">
+                <h3>你的塔罗解读</h3>
+                <div id="cards-display"></div>
+                <div id="interpretation"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="tarot-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

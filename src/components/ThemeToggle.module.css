@@ -1,0 +1,151 @@
+/* 主题切换组件样式 */
+
+.themeToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-medium);
+  transition: all var(--transition-normal) ease;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.themeToggle:hover {
+  background: var(--bg-card);
+}
+
+.themeToggle:focus {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.toggleTrack {
+  position: relative;
+  width: 50px;
+  height: 24px;
+  border-radius: 12px;
+  transition: all var(--transition-normal) ease;
+  border: 2px solid transparent;
+}
+
+.toggleTrack.dark {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-color: var(--primary-color);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.toggleTrack.light {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-color: var(--primary-color);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transition: all var(--transition-normal) ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.thumbDark {
+  left: 28px;
+  background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+}
+
+.thumbLight {
+  left: 2px;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+}
+
+.toggleIcon {
+  font-size: 10px;
+  line-height: 1;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.toggleLabel {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+  min-width: 32px;
+  text-align: left;
+}
+
+/* 悬停效果 */
+.themeToggle:hover .toggleTrack {
+  transform: scale(1.05);
+}
+
+.themeToggle:hover .toggleThumb {
+  transform: scale(1.1);
+}
+
+.themeToggle:active .toggleTrack {
+  transform: scale(0.98);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .toggleTrack {
+    width: 44px;
+    height: 22px;
+    border-radius: 11px;
+  }
+  
+  .toggleThumb {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .thumbDark {
+    left: 26px;
+  }
+  
+  .toggleIcon {
+    font-size: 9px;
+  }
+  
+  .toggleLabel {
+    font-size: var(--font-xs);
+  }
+}
+
+/* 高对比度模式 */
+@media (prefers-contrast: high) {
+  .toggleTrack {
+    border-width: 3px;
+  }
+  
+  .toggleTrack.dark {
+    background: #000000;
+    border-color: #ffffff;
+  }
+  
+  .toggleTrack.light {
+    background: #ffffff;
+    border-color: #000000;
+  }
+}
+
+/* 减少动画偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .toggleTrack,
+  .toggleThumb,
+  .themeToggle {
+    transition: none;
+  }
+}

@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+main {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.spread-selection {
+    margin-bottom: 30px;
+}
+
+.spread-selection h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4a5568;
+}
+
+.spread-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.spread-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.spread-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.spread-btn.active {
+    background: linear-gradient(45deg, #764ba2, #667eea);
+    transform: scale(1.05);
+}
+
+.question-section {
+    margin-bottom: 30px;
+}
+
+.question-section h3 {
+    margin-bottom: 15px;
+    color: #4a5568;
+    text-align: center;
+}
+
+#question {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 100px;
+    font-family: inherit;
+}
+
+#question:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.draw-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.draw-btn {
+    padding: 20px 40px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.draw-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.draw-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.result-section {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #e2e8f0;
+}
+
+.result-section h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4a5568;
+    font-size: 1.5rem;
+}
+
+.cards-display {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 120px;
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card.reversed {
+    transform: rotate(180deg);
+}
+
+.card.reversed:hover {
+    transform: rotate(180deg) translateY(5px);
+}
+
+.card-name {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-suit {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.card-position {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.interpretation {
+    background: #f7fafc;
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 5px solid #667eea;
+}
+
+.interpretation h4 {
+    color: #4a5568;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.interpretation p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #2d3748;
+}
+
+.card-meaning {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card-meaning h5 {
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .spread-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .spread-btn {
+        width: 200px;
+    }
+    
+    .card {
+        width: 100px;
+        height: 160px;
+        padding: 10px;
+    }
+    
+    .card-name {
+        font-size: 0.8rem;
+    }
+}
